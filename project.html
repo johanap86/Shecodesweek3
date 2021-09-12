@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Black Hair Dye</title>
+    <title>Arctic Fox Hair Dye</title>
     <style>
       body {
         background: linear-gradient(
@@ -25,12 +25,15 @@
         font-family: fantasy;
         color: #a682ff;
         text-shadow: 5px 5px 10px rgba(166, 130, 255, 0.4);
+        font-weight: 600;
       }
       p {
         text-align: center;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         color: #100b00;
         font-size: 20px;
+        line-height: 2.5;
+        font-weight: 500;
       }
       img {
         display: block;
@@ -39,6 +42,7 @@
         border-radius: 10px;
         box-shadow: 5px 5px 5px;
         filter: brightness(154%) contrast(65%) grayscale(65%);
+        border: 5px solid #a682ff;
       }
       a {
         color: #424874;
@@ -47,9 +51,21 @@
         display: block;
         margin: 0 auto;
         text-shadow: 5px 5px 10px rgba(66, 72, 116, 0.4);
+        line-height: 2.5;
+        font-weight: 700;
+        font-size: 20px;
+        transition: all 1s ease-out;
+        text-decoration: none;
       }
+
       button {
-        background: #f4dbd8;
+        background: radial-gradient(
+          circle at 7.5% 24%,
+          rgb(237, 161, 193) 0%,
+          rgb(250, 178, 172) 25.5%,
+          rgb(190, 228, 210) 62.3%,
+          rgb(215, 248, 247) 93.8%
+        );
         color: #424874;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 20px;
@@ -72,18 +88,26 @@
         margin: 0 auto;
         padding: 15px 60px;
       }
+      span {
+        color: #7371fc;
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <h1>Arctic Fox Hair Dye</h1>
       <h2>Transylvania</h2>
+      <hr />
       <p>
-        Raven wings, stormy night skies, and hair as your heart - <br />
-        Transylvania is the perfect fit for achieving all your darkest dreams.
+        <em
+          >Raven wings, stormy night skies, and hair as your heart - <br />
+          Transylvania is the perfect fit for achieving all your darkest
+          dreams.</em
+        >
       </p>
       <img
-        src="https://cdn.shopify.com/s/files/1/0822/4115/products/transylvania_720x.png?v=1599693015"
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/017/017/original/transylvania_720x.png?1631397955"
         alt="Black Hair Dye"
         width="300"
       />
@@ -93,19 +117,53 @@
       >
         <br />
         <br />
-        Read our article about Transylvania for the rest of our favorite mixes
-        and tips!
+        Read our article about Transylvania for the rest of
+        <span>our favorite mixes and tips!</span>
       </a>
       <br />
       <br />
-      <button>Buy Transylvania</button>
+      <button class="buy-Transylvania">
+        <strong>Buy Transylvania 💇</strong>
+      </button>
       <p>
         <br />
-        This page was built by
+        <em>This page was built by</em>
         <a href="https://jojosvlogadventures.com/" target="_blank">
-          Johana Pineda
+          <span>Johana Pineda</span>
         </a>
       </p>
     </div>
+    <script>
+      function buyHairdye() {
+        let name = prompt("What is your name?");
+        let color = prompt("What your favorite color?");
+        let hairColor = prompt("What is your hair color?");
+        if (
+          hairColor === "blonde" ||
+          hairColor === "brown" ||
+          hairColor === "black"
+        ) {
+          alert(
+            "Thank you," +
+              " " +
+              name +
+              "😊" +
+              " " +
+              "for buying from our store and don't forget to check out our" +
+              " " +
+              color +
+              " " +
+              "shades for more variety."
+          );
+        } else {
+          alert(
+            "Cool & Rad Hair Color 😎🙌! Check out our store for different color of shades."
+          );
+        }
+      }
+
+      let buyTransylvania = document.querySelector(".buy-Transylvania");
+      buyTransylvania.addEventListener("click", buyHairdye);
+    </script>
   </body>
 </html>
